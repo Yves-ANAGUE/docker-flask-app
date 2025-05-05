@@ -1,12 +1,12 @@
 
 ---
 
-## ✅ Exemple de `historique_commandes.txt`
+##  `historique_commandes.txt`
 
 ```txt
 # Initialisation de l'app Flask
-mkdir flask-app
-cd flask-app
+mkdir mon_nom-flask-app
+cd mon_nom-flask-app
 code .
 
 # Création des fichiers
@@ -20,20 +20,22 @@ touch Dockerfile
 docker build -t mon_nom-flask-app .
 
 # Lancer le conteneur
-docker run -p 5000:5000 mon_nom-flask-app
+docker run -d -p 5000:5000 mon_nom-flask-app
 
 # Se connecter à DockerHub
 docker login
 
 # Tag de l’image
-docker tag mon_nom-flask-app ton_dockerhub_id/mon_nom-flask-app
+docker tag mon_nom-flask-app yvesanague/mon_nom-flask-app
 
 # Push vers DockerHub
-docker push ton_dockerhub_id/mon_nom-flask-app
+docker push yvesanague/mon_nom-flask-app
 
 # GitHub : initialisation
 git init
-git remote add origin https://github.com/ton_user/docker-flask-app.git
+git config --global user.name "Yves-ANAGUE"
+git config --global user.email "anagueyvessannong@gmail.com"
+git remote add origin https://github.com/Yves-ANAGUE/docker-flask-app.git
 git add .
-git commit -m "Initial commit"
-git push -u origin main
+git commit -m "Ajout du projet Flask Docker"
+git push -u origin master
